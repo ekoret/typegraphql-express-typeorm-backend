@@ -6,6 +6,8 @@ express 4.17.2 - Create the server and backend
 typeORM 0.2.41 - Object relational model for creating database schemas with JavaScript  
 reflect-metadata 0.1.13 - For typeORM decorators to work properly
 pg 8.7.1 - Interact with a PostgreSQL database with node
+dotenv 10.0.0 - Hide enviroment variables for node
+
 
 ### Developer Dependencies
 Typescript 4.5.4 - Strictly typed superset of JavaScript  
