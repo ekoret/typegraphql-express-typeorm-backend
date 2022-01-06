@@ -8,7 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
+require("reflect-metadata");
+const typeorm_1 = require("typeorm");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
+    const connection = yield (0, typeorm_1.createConnection)({
+        type: 'postgres',
+        host: 'localhost',
+        database: 'gainztrackr',
+        username: 'postgres',
+        password: process.env.DATABASE_PASSWORD,
+        entities: []
+    });
 });
 main();
 //# sourceMappingURL=server.js.map
