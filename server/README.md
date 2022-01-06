@@ -26,3 +26,6 @@ https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 
 Putting TypeORM and ExpressJS together  
 https://typeorm.io/#/example-with-express
+
+Setting up entities for TypeORM  
+https://typeorm.io/#/entities

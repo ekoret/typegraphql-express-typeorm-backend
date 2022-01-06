@@ -16,6 +16,9 @@ require('dotenv').config();
 require("reflect-metadata");
 const typeorm_1 = require("typeorm");
 const express_1 = __importDefault(require("express"));
+const apollo_server_express_1 = require("apollo-server-express");
+const type_graphql_1 = require("type-graphql");
+const hello_1 = require("./resolvers/hello");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = yield (0, typeorm_1.createConnection)({
         type: 'postgres',
@@ -26,6 +29,14 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         entities: []
     });
     const app = (0, express_1.default)();
+    const apolloServer = new apollo_server_express_1.ApolloServer({
+        schema: yield (0, type_graphql_1.buildSchema)({
+            resolvers: [hello_1.HelloResolver],
+            validate: false
+        })
+    });
+    yield apolloServer.start();
+    apolloServer.applyMiddleware({ app });
     app.listen(4000, () => {
         console.log('server started on localhost:4000');
     });
