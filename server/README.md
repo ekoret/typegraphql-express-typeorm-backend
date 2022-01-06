@@ -4,6 +4,8 @@ You can find all the information about the server here.
 ## Dependencies
 express 4.17.2 - Create the server and backend  
 @types/express 4.17.13 - For type information when using express and Typescript
+typeORM - Object relational model for creating database schemas with JavaScript
+reflect-metadata - For typeORM decorators to work properly
 
 ### Developer Dependencies
 Typescript 4.5.4 - Strictly typed superset of JavaScript  
