@@ -29,3 +29,6 @@ https://typeorm.io/#/example-with-express
 
 Setting up entities for TypeORM  
 https://typeorm.io/#/entities
+
+TypeORM column types for Postgres
+https://typeorm.io/#/entities/column-types-for-postgres
