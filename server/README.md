@@ -3,5 +3,5 @@
 ## Dependencies
 
 ### Dev Dependencies
-Typescript
+Typescript  
 @types/node - Gives types and type information for built-in node functions for Typescript
