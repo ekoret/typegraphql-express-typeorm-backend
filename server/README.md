@@ -4,9 +4,12 @@ You can find all the information about the server here.
 ## Dependencies
 express 4.17.2 - Create the server and backend  
 typeORM 0.2.41 - Object relational model for creating database schemas with JavaScript  
-reflect-metadata 0.1.13 - For typeORM decorators to work properly
+reflect-metadata* 0.1.13 - For typeORM decorators to work properly
 pg 8.7.1 - Interact with a PostgreSQL database with node
 dotenv 10.0.0 - Hide enviroment variables for node
+apollo-server-express* 3.6.1 - Allows easy creation of GraphQL endpoints
+GraphQL 15.8.0 - Query language
+type-graphql* 1.1.1 - For the GraphQL schema
 
 
 ### Developer Dependencies
