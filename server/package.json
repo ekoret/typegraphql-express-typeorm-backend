@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node dist/server.js",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "build": "tsc src/server.ts"
   },
   "keywords": [],
   "author": "",
