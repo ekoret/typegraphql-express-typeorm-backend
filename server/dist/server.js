@@ -31,6 +31,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         entities: [User_1.User]
     });
     const app = (0, express_1.default)();
+    app.use(express_1.default.json());
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema: yield (0, type_graphql_1.buildSchema)({
             resolvers: [hello_1.HelloResolver],

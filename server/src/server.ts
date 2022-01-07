@@ -24,6 +24,7 @@ const main = async () => {
 
     //Create an express app
     const app = express();
+    app.use(express.json());
 
     //Create GraphQL endpoint with Apollo
     const apolloServer = new ApolloServer({
