@@ -38,4 +38,8 @@ export class User extends BaseEntity {
     @Column()
     isPremium!: Boolean
 
+    @Field(() => [Number])
+    @Column()
+    luckyNumbers?: number[]
+
 }
