@@ -6,6 +6,7 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { User } from './entities/User';
 import { UserResolver } from './resolvers/user';
+import cors from 'cors';
 
 const main = async () => {
 
@@ -25,6 +26,7 @@ const main = async () => {
     //Create an express app
     const app = express();
     app.use(express.json());
+    app.use(cors());
 
     //Create GraphQL endpoint with Apollo
     const apolloServer = new ApolloServer({
