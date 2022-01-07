@@ -18,8 +18,8 @@ const typeorm_1 = require("typeorm");
 const express_1 = __importDefault(require("express"));
 const apollo_server_express_1 = require("apollo-server-express");
 const type_graphql_1 = require("type-graphql");
-const hello_1 = require("./resolvers/hello");
 const User_1 = require("./entities/User");
+const user_1 = require("./resolvers/user");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = yield (0, typeorm_1.createConnection)({
         type: 'postgres',
@@ -34,7 +34,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     app.use(express_1.default.json());
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema: yield (0, type_graphql_1.buildSchema)({
-            resolvers: [hello_1.HelloResolver],
+            resolvers: [user_1.UserResolver],
             validate: false
         })
     });

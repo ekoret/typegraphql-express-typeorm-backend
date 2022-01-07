@@ -4,8 +4,8 @@ import { createConnection } from 'typeorm';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
-import { HelloResolver } from './resolvers/hello';
 import { User } from './entities/User';
+import { UserResolver } from './resolvers/user';
 
 const main = async () => {
 
@@ -29,7 +29,7 @@ const main = async () => {
     //Create GraphQL endpoint with Apollo
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [HelloResolver],
+            resolvers: [UserResolver],
             validate: false
         })
     });
