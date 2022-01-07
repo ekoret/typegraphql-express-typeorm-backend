@@ -38,7 +38,8 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         schema: yield (0, type_graphql_1.buildSchema)({
             resolvers: [user_1.UserResolver],
             validate: false
-        })
+        }),
+        context: ({ req, res }) => ({ req, res })
     });
     yield apolloServer.start();
     apolloServer.applyMiddleware({ app });

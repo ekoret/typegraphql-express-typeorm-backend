@@ -33,7 +33,8 @@ const main = async () => {
         schema: await buildSchema({
             resolvers: [UserResolver],
             validate: false
-        })
+        }),
+        context: ({ req, res }) => ({req, res})
     });
     await apolloServer.start(); //This needs to be calle dbefore applyMiddleware
     apolloServer.applyMiddleware({ app });
