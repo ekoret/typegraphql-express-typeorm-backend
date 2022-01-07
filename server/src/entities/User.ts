@@ -6,9 +6,7 @@ import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
 export class User extends BaseEntity {
 
     @Field()
-    @PrimaryGeneratedColumn({
-        
-    })
+    @PrimaryGeneratedColumn()
     id!: number;
     
     @Field(() => String)
