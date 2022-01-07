@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
 @Entity()
 export class User extends BaseEntity {
 
-    @Field()
+    @Field(() => Number)
     @PrimaryGeneratedColumn()
     id!: number;
     
@@ -17,29 +17,31 @@ export class User extends BaseEntity {
     @Column()
     lastName!: string;
     
-    @Field(() => String)
-    @Column()
-    country!: string;
+    // @Field(() => String)
+    // @Column()
+    // country!: string;
     
-    @Field(() => String)
-    @Column({
-        unique: true
-    })
-    email!: string;
+    // @Field(() => String)
+    // @Column({
+    //     unique: true
+    // })
+    // email!: string;
 
-    @Field(() => String)
-    @Column({
-        unique: true,
-        length: 10
-    })
-    creditCardNumber?: string
+    // @Field(() => String)
+    // @Column({
+    //     unique: true,
+    //     length: 10
+    // })
+    // creditCardNumber?: string
 
-    @Field(() => Boolean)
-    @Column()
-    isPremium!: Boolean
+    // @Field(() => Boolean)
+    // @Column()
+    // isPremium!: Boolean
 
-    @Field(() => [Number])
-    @Column()
-    luckyNumbers?: number[]
+    // @Field(() => [Number])
+    // @Column({
+    //     type: 'simple-array'
+    // })
+    // luckyNumbers?: number[]
 
 }

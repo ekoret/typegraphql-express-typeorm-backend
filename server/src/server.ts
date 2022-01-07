@@ -18,7 +18,7 @@ const main = async () => {
         password: process.env.DATABASE_PASSWORD,
         // port: 5432,
         // logging: true,
-        // synchronize: true,
+        synchronize: true,
         entities: [User]
     });
 

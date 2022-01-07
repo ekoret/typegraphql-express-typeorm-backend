@@ -19,6 +19,7 @@ const express_1 = __importDefault(require("express"));
 const apollo_server_express_1 = require("apollo-server-express");
 const type_graphql_1 = require("type-graphql");
 const hello_1 = require("./resolvers/hello");
+const User_1 = require("./entities/User");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = yield (0, typeorm_1.createConnection)({
         type: 'postgres',
@@ -26,7 +27,8 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         database: 'gainztrackr',
         username: 'postgres',
         password: process.env.DATABASE_PASSWORD,
-        entities: []
+        synchronize: true,
+        entities: [User_1.User]
     });
     const app = (0, express_1.default)();
     const apolloServer = new apollo_server_express_1.ApolloServer({
