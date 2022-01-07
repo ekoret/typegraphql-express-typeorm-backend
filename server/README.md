@@ -2,7 +2,7 @@
 You can find all the information about the server here.
 
 ## Dependencies
-express 4.17.2 - Create the server and backend  
+expressJS 4.17.2 - Create the server and backend  
 typeORM 0.2.41 - Object relational model for creating database schemas with JavaScript  
 reflect-metadata* 0.1.13 - For typeORM decorators to work properly  
 pg 8.7.1 - Interact with a PostgreSQL database with node  
@@ -22,12 +22,12 @@ nodemon 2.0.15 - Hot reloads a script file
 
 ## References
 
-## TypeScript
+### TypeScript
 
 About the TypeScript config file  
 https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 
-## TypeORM
+### TypeORM
 
 Putting TypeORM and ExpressJS together  
 https://typeorm.io/#/example-with-express
@@ -40,3 +40,8 @@ https://typeorm.io/#/entities/column-types-for-postgres
 
 TypeORM column options  
 https://typeorm.io/#/entities/column-options
+
+### GraphQL
+
+About Queries and Mutations, How to Query  
+https://graphql.org/learn/queries/
