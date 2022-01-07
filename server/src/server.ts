@@ -7,6 +7,7 @@ import { buildSchema } from 'type-graphql';
 import { User } from './entities/User';
 import { UserResolver } from './resolvers/user';
 import cors from 'cors';
+import { HelloResolver } from './resolvers/hello';
 
 const main = async () => {
 
@@ -31,7 +32,7 @@ const main = async () => {
     //Create GraphQL endpoint with Apollo
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [UserResolver],
+            resolvers: [UserResolver, HelloResolver],
             validate: false
         }),
         context: ({ req, res }) => ({req, res})

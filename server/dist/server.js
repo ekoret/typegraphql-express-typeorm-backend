@@ -21,6 +21,7 @@ const type_graphql_1 = require("type-graphql");
 const User_1 = require("./entities/User");
 const user_1 = require("./resolvers/user");
 const cors_1 = __importDefault(require("cors"));
+const hello_1 = require("./resolvers/hello");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = yield (0, typeorm_1.createConnection)({
         type: 'postgres',
@@ -36,7 +37,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     app.use((0, cors_1.default)());
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema: yield (0, type_graphql_1.buildSchema)({
-            resolvers: [user_1.UserResolver],
+            resolvers: [user_1.UserResolver, hello_1.HelloResolver],
             validate: false
         }),
         context: ({ req, res }) => ({ req, res })
