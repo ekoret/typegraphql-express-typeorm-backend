@@ -32,3 +32,6 @@ https://typeorm.io/#/entities
 
 TypeORM column types for Postgres  
 https://typeorm.io/#/entities/column-types-for-postgres
+
+TypeORM column options  
+https://typeorm.io/#/entities/column-options
