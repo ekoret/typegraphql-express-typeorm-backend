@@ -13,16 +13,21 @@ type-graphql* 1.1.1 - For the GraphQL schema
 
 
 ### Developer Dependencies
-Typescript 4.5.4 - Strictly typed superset of JavaScript  
-@types/node 17.0.8 - Gives types and type information for built-in node functions for Typescript  
-@types/express 4.17.13 - For type information when using express and Typescript  
+TypeScript 4.5.4 - Strictly typed superset of JavaScript  
+@types/node 17.0.8 - Gives types and type information for built-in node functions for TypeScript  
+@types/express 4.17.13 - For type information when using express and TypeScript  
 nodemon 2.0.15 - Hot reloads a script file
 
 
 
 ## References
-About the Typescript config file  
+
+## TypeScript
+
+About the TypeScript config file  
 https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+
+## TypeORM
 
 Putting TypeORM and ExpressJS together  
 https://typeorm.io/#/example-with-express
