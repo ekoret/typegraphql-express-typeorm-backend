@@ -5,6 +5,7 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { HelloResolver } from './resolvers/hello';
+import { User } from './entities/User';
 
 const main = async () => {
 
@@ -18,7 +19,7 @@ const main = async () => {
         // port: 5432,
         // logging: true,
         // synchronize: true,
-        entities: []
+        entities: [User]
     });
 
     //Create an express app
