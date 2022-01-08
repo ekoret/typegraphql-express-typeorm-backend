@@ -46,6 +46,11 @@ https://typeorm.io/#/entities/column-options
 About Queries and Mutations, How to Query  
 https://graphql.org/learn/queries/
 
+### TypeGraphQL
+
+Building a schema  
+https://typegraphql.com/docs/1.1.1/getting-started.html#building-schema
+
 ### Apollo
 
 How to use apollo-server-express  
