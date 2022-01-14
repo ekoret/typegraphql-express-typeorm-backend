@@ -1,6 +1,8 @@
-# react-fullstack
-Fullstack project made with React, Typescript, Express, GraphQL, and more.
+# typegraphql-express-typeorm
+
+Building a backend with TypeGraphQL, ExpressJS, TypeORM, and GraphQL.
 
 ## Tech Information
+
 Node 16.13.1  
 npm 8.1.2
