@@ -1,15 +1,24 @@
 import express, { Express } from "express";
 import cors from "cors";
 
-export const createExpressApp = () => {
-  const app = express();
+/**
+ *
+ * @return An express app with loaded middlewares
+ */
+export const createExpressApp = (): Express => {
+  const app: Express = express();
 
   const appLoaded = applyExpressMiddleware(app);
 
   return appLoaded;
 };
 
-const applyExpressMiddleware = (app: Express) => {
+/**
+ *
+ * @param app The express app to apply middleware
+ * @return The express app
+ */
+const applyExpressMiddleware = (app: Express): Express => {
   app.use(express.json());
   app.use(cors());
 
