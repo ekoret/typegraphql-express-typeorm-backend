@@ -10,7 +10,7 @@ In this version of the project, the goal is to make the package database-agnosti
 Starts the server without compiling TypeScript files. Only really useful for launching in production.
 
 `watch`  
-Watches TypeScript files for changes.
+Compiles and watches TypeScript files for changes. If changes occur, the TypeScript files will re-compile.
 
 `dev`  
 Starts the server with nodemon for reloading and development.
