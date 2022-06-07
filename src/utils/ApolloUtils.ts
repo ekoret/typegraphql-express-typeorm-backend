@@ -42,7 +42,7 @@ export const startApolloServer = async (app: Express) => {
 
     return apolloServer;
   } catch (err) {
-    console.log("Error starting Apollo Server");
+    console.log("Error starting Apollo Server", err);
   }
 
   return;
