@@ -1,10 +1,10 @@
 require("dotenv").config();
 import "reflect-metadata";
 import cors from "cors";
-import { ApolloServer } from "apollo-server-express";
-import { buildSchema } from "type-graphql";
 import { createConnection } from "typeorm";
 import express from "express";
+
+import { createApolloServer } from "./utils/ApolloServerUtils";
 
 //Configs
 const SERVER_PORT =
@@ -21,13 +21,7 @@ const main = async () => {
     app.use(cors());
 
     //Create GraphQL endpoint with Apollo
-    const apolloServer = new ApolloServer({
-      schema: await buildSchema({
-        resolvers: [__dirname + "/resolvers/**/*.{ts,js}"],
-        validate: false,
-      }),
-      context: ({ req, res }) => ({ req, res }),
-    });
+    const apolloServer = await createApolloServer();
 
     await apolloServer.start(); //This needs to be called before applyMiddleware
     apolloServer.applyMiddleware({ app }); //Applying the Apollo Server middleware to the app
