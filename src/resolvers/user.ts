@@ -3,21 +3,27 @@ import { Arg, Mutation, Query, Resolver } from "type-graphql";
 
 @Resolver()
 export class UserResolver {
-  @Query(() => String)
-  users() {
-    return User.find();
+  @Query(() => [User])
+  async users(): Promise<User[]> {
+    const users = await User.find();
+
+    return users;
   }
 
   @Mutation(() => User)
-  createUser(
+  async createUser(
     @Arg("firstName") firstName: string,
     @Arg("lastName") lastName: string
-  ): User {
-    const newUser = User.create({
-      firstName,
-      lastName,
-    });
+  ): Promise<User> {
+    const newUser = new User();
 
-    return newUser;
+    newUser.firstName = firstName;
+    newUser.lastName = lastName;
+
+    const savedUser = await newUser.save();
+
+    console.log(savedUser);
+
+    return savedUser;
   }
 }
