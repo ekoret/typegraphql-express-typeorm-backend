@@ -13,7 +13,7 @@ Starts the server without compiling TypeScript files. Only really useful for lau
 Compiles and watches TypeScript files for changes. If changes occur, the TypeScript files will re-compile.
 
 `dev`  
-Starts the server with nodemon for reloading and development.
+Starts the server with nodemon for reloading and development. Use this along side the `watch` script to develop.
 
 ## Tech Information
 
