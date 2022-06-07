@@ -9,7 +9,9 @@ import { createExpressApp, listening } from "./utils/ExpressUtils";
 const main = async () => {
   //Make the connection to the database
   try {
-    await createConnection(); //createConnection will look for the ormconfig.json file in the project root
+    //Create connection to database
+    //createConnection will look for ormconfig in project root
+    await createConnection();
 
     //Create an express app and adds middleware
     const app = createExpressApp();
