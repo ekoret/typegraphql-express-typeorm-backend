@@ -4,11 +4,7 @@ import { createConnection } from "typeorm";
 
 //Utils
 import { startApolloServer } from "./utils/ApolloUtils";
-import { createExpressApp } from "./utils/ExpressUtils";
-
-//Configs
-const SERVER_PORT =
-  process.env.ENVIROMENT === "DEV" ? 4000 : process.env.SERVER_PORT;
+import { createExpressApp, listening } from "./utils/ExpressUtils";
 
 const main = async () => {
   //Make the connection to the database
@@ -18,12 +14,11 @@ const main = async () => {
     //Create an express app and adds middleware
     const app = createExpressApp();
 
-    //Create GraphQL endpoint with Apollo
+    //Create GraphQL endpoint with Apollo and applies middleware
     await startApolloServer(app);
 
-    app.listen(SERVER_PORT, () => {
-      console.log(`Server listening on port ${SERVER_PORT}`);
-    });
+    //Server is listening
+    listening(app);
   } catch (err) {
     console.log(err);
   }
