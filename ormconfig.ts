@@ -8,6 +8,7 @@ module.exports = {
   password: DEV_ENVIROMENT ? "test" : process.env.DABASEBASE_PASSWORD,
   database: DEV_ENVIROMENT ? "testDB" : process.env.DABASE_NAME,
   synchronize: DEV_ENVIROMENT, //if dev env is true, synchronize (dev)
-  logging: DEV_ENVIROMENT, //if dev env is true, logging true (dev)
+  // logging: DEV_ENVIROMENT, //if dev env is true, logging true (dev), logs sql queries to console
+  logging: false, //if dev env is true, logging true (dev)
   entities: ["dist/entities/**/*.js"],
 };
