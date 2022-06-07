@@ -33,9 +33,9 @@ const applyApolloServerMiddleware = (
 };
 
 export const startApolloServer = async (app: Express) => {
-  const apolloServer = await createApolloServer();
-
   try {
+    const apolloServer = await createApolloServer();
+
     await apolloServer.start();
 
     applyApolloServerMiddleware(apolloServer, app);
