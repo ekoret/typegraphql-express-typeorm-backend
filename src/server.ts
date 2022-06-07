@@ -1,11 +1,10 @@
 require("dotenv").config();
 import "reflect-metadata";
-import cors from "cors";
 import { createConnection } from "typeorm";
-import express from "express";
 
 //Utils
 import { startApolloServer } from "./utils/ApolloUtils";
+import { createExpressApp } from "./utils/ExpressUtils";
 
 //Configs
 const SERVER_PORT =
@@ -17,9 +16,7 @@ const main = async () => {
     await createConnection(); //createConnection will look for the ormconfig.json file in the project root
 
     //Create an express app
-    const app = express();
-    app.use(express.json());
-    app.use(cors());
+    const app = createExpressApp();
 
     //Create GraphQL endpoint with Apollo
     await startApolloServer(app);
