@@ -3,11 +3,11 @@ import "reflect-metadata";
 import cors from "cors";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
-// import { createConnection } from "typeorm";
+import { createConnection } from "typeorm";
 import express from "express";
 
 //Configs
-// import { typeORMconfig } from "./configs/typeORMconfig";
+import { typeORMconfig } from "./configs/typeORMconfig";
 const SERVER_PORT = process.env.SERVER_PORT || 4000;
 
 //Resolvers
@@ -15,8 +15,12 @@ import { HelloResolver } from "./resolvers/hello";
 import { UserResolver } from "./resolvers/user";
 
 const main = async () => {
-  //TypeORM database connection to PostgreSQL
-  //   const connection = await createConnection(typeORMconfig);
+  //Make the connection to the database
+  try {
+    await createConnection(typeORMconfig);
+  } catch (err) {
+    if (err) console.log(err);
+  }
 
   //Create an express app
   const app = express();
