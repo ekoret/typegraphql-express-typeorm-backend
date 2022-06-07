@@ -4,7 +4,8 @@ import cors from "cors";
 import { createConnection } from "typeorm";
 import express from "express";
 
-import { createApolloServer } from "./utils/ApolloServerUtils";
+//Utils
+import { startApolloServer } from "./utils/ApolloUtils";
 
 //Configs
 const SERVER_PORT =
@@ -21,10 +22,7 @@ const main = async () => {
     app.use(cors());
 
     //Create GraphQL endpoint with Apollo
-    const apolloServer = await createApolloServer();
-
-    await apolloServer.start(); //This needs to be called before applyMiddleware
-    apolloServer.applyMiddleware({ app }); //Applying the Apollo Server middleware to the app
+    await startApolloServer(app);
 
     app.listen(SERVER_PORT, () => {
       console.log(`Server listening on port ${SERVER_PORT}`);
