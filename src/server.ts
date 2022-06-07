@@ -15,7 +15,7 @@ const main = async () => {
   try {
     await createConnection(); //createConnection will look for the ormconfig.json file in the project root
 
-    //Create an express app
+    //Create an express app and adds middleware
     const app = createExpressApp();
 
     //Create GraphQL endpoint with Apollo
