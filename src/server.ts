@@ -10,10 +10,6 @@ import express from "express";
 const SERVER_PORT =
   process.env.ENVIROMENT === "DEV" ? 4000 : process.env.SERVER_PORT;
 
-//Resolvers
-import { HelloResolver } from "./resolvers/hello";
-import { UserResolver } from "./resolvers/user";
-
 const main = async () => {
   //Make the connection to the database
   try {
@@ -27,7 +23,7 @@ const main = async () => {
     //Create GraphQL endpoint with Apollo
     const apolloServer = new ApolloServer({
       schema: await buildSchema({
-        resolvers: [UserResolver, HelloResolver],
+        resolvers: [__dirname + "/resolvers/**/*.{ts,js}"],
         validate: false,
       }),
       context: ({ req, res }) => ({ req, res }),
