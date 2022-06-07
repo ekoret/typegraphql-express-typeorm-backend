@@ -1,12 +1,9 @@
-import { Query, Resolver } from 'type-graphql';
-import { User } from '../entities/User';
+import { Query, Resolver } from "type-graphql";
 
 @Resolver()
 export class UserResolver {
-
-    @Query( () => [User] )
-    users() {
-        return 'single user';
-    }
-    
+  @Query(() => String)
+  users() {
+    return "all users";
+  }
 }
