@@ -1,4 +1,4 @@
 node_modules
 .env
 dist
-testDB.sql
+testDB.db

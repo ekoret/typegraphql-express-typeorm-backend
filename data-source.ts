@@ -5,7 +5,7 @@ import { User } from './src/entities/User';
 
 export const sqliteDataSource = new DataSource({
   type: 'sqlite',
-  database: 'testDB.sql',
+  database: 'testDB.db',
   // entities: ['dist/entities/**/*.js'], //soon to be deprecated in v4.0
   entities: [User],
   synchronize: true,
