@@ -30,3 +30,8 @@ DATABASE_PORT
 
 Node 18.2.0  
 npm 8.9.0
+
+## Dev Log
+
+2022-06-27  
+As of right now, the project is currently set up to be a `sqlite` database. I have `updated TypeORM to version 0.3.6` and the project now makes use of a `DataSource` instead of an ormconfig. After updating TypeORM and changing ormconfig to a DataSource, the database continues to work fine with the Express and Apollo GraphQL server. In the future when attempting to add the next database driver, will need to continue to test this.
