@@ -1,8 +1,8 @@
 import 'reflect-metadata';
-import { sqliteDataSource, postgresDataSource } from '../../data-source';
+import { sqliteDataSource } from '../../data-source';
 
 export const dbConnect = async () => {
-  await postgresDataSource
+  await sqliteDataSource
     .initialize()
     .then(() => {
       console.log('Data Source has been initialized!\nConnected to Database.');
